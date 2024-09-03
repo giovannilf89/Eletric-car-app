@@ -14,4 +14,5 @@
     <string name="branco">Branco</string>
     <string name="preto">Preto</string>
     <string name="calcular_autonomia">Calcular Autonomia</string>
+    <string name="calcular_btn">Calcular</string>
 </resources>
