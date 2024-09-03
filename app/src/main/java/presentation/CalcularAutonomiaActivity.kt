@@ -1,43 +1,44 @@
-package com.example.eletric_car_app
+package presentation
 
 import android.os.Bundle
-import android.util.Log
 import android.widget.Button
 import android.widget.EditText
+import android.widget.ImageView
 import android.widget.TextView
-import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.view.ViewCompat
-import androidx.core.view.WindowInsetsCompat
+import com.example.eletric_car_app.R
 
-class MainActivity : AppCompatActivity() {
-    // declaracao das variaveis
-    lateinit var preco: EditText // lateinit inicia var posteriormente
-    lateinit var btnCalcular: Button
+class CalcularAutonomiaActivity : AppCompatActivity() { // classe esta herdando do pai o que precisa para printar os dados na tela
+
+    lateinit var preco: EditText
     lateinit var kmPercorrido: EditText
     lateinit var resultado: TextView
+    lateinit var btnCalcular: Button // lateinit inicia var posteriormente
+    lateinit var btnClose: ImageView
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        enableEdgeToEdge()
-        setContentView(R.layout.activity_main) // começa aqui e passa pelas funcoes
-        // chamada da funcao
+        setContentView(R.layout.activity_calcular_autonomia)
         setupView()
         setupListeners()
+
     }
 
-    // pegar valor da view
     fun setupView() {
         preco = findViewById(R.id.et_preco_kwh)
         btnCalcular = findViewById(R.id.btn_calcular)
         kmPercorrido = findViewById(R.id.et_km_percorrido)
         resultado = findViewById(R.id.tv_resultado)
+        btnCalcular = findViewById(R.id.btn_calcular)
+        btnClose = findViewById(R.id.iv_close)
     }
-
     // recuperar valor do botão
     fun setupListeners() {
         btnCalcular.setOnClickListener {
             calcular()
+        }
+        btnClose.setOnClickListener { // encerra a tela
+            finish()
         }
     }
 
@@ -50,4 +51,3 @@ class MainActivity : AppCompatActivity() {
     }
 
 }
-
