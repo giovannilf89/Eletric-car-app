@@ -1,4 +1,4 @@
-package presentation
+package eletric_car_app.UI
 
 import android.os.Bundle
 import android.widget.Button
@@ -16,9 +16,9 @@ class CalcularAutonomiaActivity : AppCompatActivity() { // classe esta herdando 
     lateinit var btnCalcular: Button // lateinit inicia var posteriormente
     lateinit var btnClose: ImageView
 
-    override fun onCreate(savedInstanceState: Bundle?) {
+    override fun onCreate(savedInstanceState: Bundle?) { // vai ser passado quando a tela for criada
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_calcular_autonomia)
+        setContentView(R.layout.activity_calcular_autonomia) // setar o xml (R de resource)
         setupView()
         setupListeners()
 
